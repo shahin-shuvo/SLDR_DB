@@ -1,0 +1,107 @@
+/********** Template CSS **********/
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer-div{
+    text-align: center;
+}
+:root {
+    --primary: #06A3DA;
+    --secondary: #091E3E;
+    --light: #EEF9FF;
+    --dark: #091E3E;
+}
+.page-content{
+    flex-grow: 1;
+}
+
+
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+.navbar-brand .text-brand {
+    font-family: 'Rubik Dirt';
+    font-size: 2.5vw;
+    color: navy;
+}
+#nav-div {
+    color: #000;
+    font-weight: bold;
+}
+#nav-div .nav-link:hover {
+    background-color: darkgoldenrod;
+    color: white;
+    font-weight: bold;
+}
+
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 10px;
+    color: black;
+    text-align: center;
+    font-size: medium;
+
+}
+.coywise-state-tbl{
+    background-color: #fff;
+}
+.card, .about-img, .coywise-state-tbl{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-title{
+    font-weight: 300;
+}
+.card-num{
+    font-weight: 800;
+    color: #091E3E;
+}
+
+
+.about-card {
+    color: #000;
+    margin: 10px;
+    border: 5px solid white;
+    border-radius: 2rem;
+    border-block-start-width: 5px;
+    border-block-start-width: thick;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.about-div {
+    /* background-image: url("../img/abgolf.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px); /* blur effect to the backdrop */
+    background-color: rgba(255, 255, 255, 0.2);
+   
+  }
+
+  .datatable_att {
+    font-size: 0.8rem; /* or a specific pixel value like 12px */
+  }
+  

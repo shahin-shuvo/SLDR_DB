@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title%}
+12 Sig Bn
+{% endblock %}
+
+
+
+{% block content%}
+
+<div class="container" style="margin-top: 5px;">
+    <div class="row ">
+        <div class="col-xl-2 col-lg-2 col-xs-6 col-sm-6">
+            <div class="card l-bg-cherry" style="background-color: #FEEBE7 ">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-2">
+                        <h5 class="card-title mb-0">POSTED</h5>
+                    </div>
+                    <div class="mb-2">
+                        <h5 class="card-num mb-0">{{posted_count}}</h5>
+                    </div>
+                    <a type="button" href="/sldr_db" class="btn btn-dark btn-sm">See Details<i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-xs-6 col-sm-6">
+            <div class="card l-bg-cherry" style="background-color: #EEFCBB ">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-2">
+                        <h5 class="card-title mb-0">PRESENT</h5>
+                    </div>
+                    <div class="mb-2">
+                        <h5 class="card-num mb-0">{{present_count}}</h5>
+                    </div>
+                    <a type="button" href="/present" class="btn btn-dark btn-sm">See Details<i class="bi bi-arrow-right"></i></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-lg-2 col-xs-6 col-sm-6">
+            <div class="card l-bg-cherry" style="background-color: #CAFCBB ">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-2">
+                        <h5 class="card-title mb-0">P LVE</h5>
+                    </div>
+                    <div class="mb-2">
+                        <h5 class="card-num mb-0">{{plve_count}}</h5>
+                    </div>
+                    <a type="button" href="/plve" class="btn btn-dark btn-sm">See Details<i class="bi bi-arrow-right"></i></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-xs-6 col-sm-6">
+            <div class="card l-bg-cherry" style="background-color: #BBEDFC ">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-2">
+                        <h5 class="card-title mb-0">C LVE</h5>
+                    </div>
+                    <div class="mb-2">
+                        <h5 class="card-num mb-0">{{clve_count}}</h5>
+                    </div>
+                    <a type="button" href="/clve" class="btn btn-dark btn-sm">See Details<i class="bi bi-arrow-right"></i></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-xs-6 col-sm-6">
+            <div class="card l-bg-cherry" style="background-color: #F2BBFC ">
+                <div class="card-statistic-3 p-4" >
+                    <div class="mb-2">
+                        <h5 class="card-title mb-0">COURSE</h5>
+                    </div>
+                    <div class="mb-2">
+                        <h5 class="card-num mb-0">{{course_count}}</h5>
+                    </div>
+                    <a type="button" href="/course" class="btn btn-dark btn-sm">See Details<i class="bi bi-arrow-right"></i></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-2 col-lg-2 col-xs-6 col-sm-6">
+            <div class="card l-bg-cherry" style="background-color: #BBC0FC ">
+                <div class="card-statistic-3 p-4" >
+                    <div class="mb-2">
+                        <h5 class="card-title mb-0">ATT</h5>
+                    </div>
+                    <div class="mb-2">
+                        <h5 class="card-num mb-0">{{att_count}}</h5>
+                    </div>
+                    <a type="button" href="/att" class="btn btn-dark btn-sm">See Details<i class="bi bi-arrow-right"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container coywise-state-tbl" style="margin-top: 5px;">
+<h3 style="margin-top: 20px;text-decoration: underline;">STATE AS PER COY</h3>
+<table class="table cell-border table-sm" id="datatable"  style="width: 100%;">
+    <thead>
+        <tr style="background-color: #091E3E; color: whitesmoke;">
+
+            <th>Ser</th>
+            <th>Name</th>
+            <th>Appt</th>
+
+        </tr>
+    </thead>
+    <tbody style="color: black;">
+        {% for x in memberList %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ x["Name"] }}</td>
+            <td>{{ x["Appt"] }}</td>
+           
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</div>
+{% endblock %}

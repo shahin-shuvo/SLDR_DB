@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title%}
+12 Sig Bn
+{% endblock %}
+
+
+
+{% block content%}
+<div class="container coywise-state-tbl" style="margin-top: 5px; margin-bottom: 5px;">
+    <h3 style="margin-top: 20px;text-decoration: underline;">STATE OF POSTED MANPOWER</h3>
+    <table class="table cell-border table-sm datatable_att" id="datatable"  style="width: 100%;">
+        <thead>
+            <tr style="background-color: #091E3E; color: whitesmoke;">
+                <th>সেনা নং</th>
+                <th>পদবী</th>
+                <th>পেশা</th>
+                <th>নাম</th>
+                <th>কোম্পানী</th>
+            </tr>
+        </thead>
+        <tbody style="color: black;">
+            {% for x in posted_manpower %}
+            <tr>
+                <td>{{ x["সেনা নং"] }}</td>
+                <td>{{ x["পদবী"] }}</td>
+                <td>{{ x["পেশা"] }}</td>
+                <td>{{ x["নাম"] }}</td>
+                <td>{{ x["কোম্পানী"] }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

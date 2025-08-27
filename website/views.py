@@ -84,11 +84,19 @@ eme_records = df.to_dict(orient="records")
 
 posted_manpower = bhq_records+ hq_records+ radio_records + rr_records + op_records + bsc123_records + bsc127_records + bsc128_records+ bsc212_records + ict_records + eme_records
 
+
+#IN AID TO CIV POWER
+aidToCiv_sheet = "1EmwHtUWUabZT-pOjqzqZjaW-qJu5LeZejs37gAUJfHc"
+df = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{aidToCiv_sheet}/export?format=csv")
+df= df.fillna("-")
+aidToCiv_records = df.to_dict(orient="records")
+
 @views.route('/')
 def home():
     return render_template("home.html",
                            posted_count = len(posted_manpower),
                            att_count = len(att_records),
+                           aidToCiv_count = len(aidToCiv_records),
                            plve_count = len(plve_records),
                            course_count = len(course_records),
                            clve_count = len(clve_records),
@@ -101,6 +109,10 @@ def aboutpgcc():
 @views.route('/sldr_db')
 def sldr_db():
     return render_template("sldr_db.html", posted_manpower= posted_manpower)
+
+@views.route('/aidtociv')
+def aidtociv():
+    return render_template("aidtociv.html", aidToCiv_records= aidToCiv_records)
 
 @views.route('/att')
 def att():

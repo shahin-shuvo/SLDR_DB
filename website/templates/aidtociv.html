@@ -8,7 +8,7 @@
 
 {% block content%}
 <div class="container coywise-state-tbl" style="margin-top: 5px; margin-bottom: 5px;">
-    <h3 style="margin-top: 20px;text-decoration: underline;">STATE OF P LVE</h3>
+    <h3 style="margin-top: 20px;text-decoration: underline;">STATE OF IN AID TO CIV POWER DUTY</h3>
     <table class="table cell-border table-sm datatable_att" id="datatable"  style="width: 100%;">
         <thead>
             <tr style="background-color: #091E3E; color: whitesmoke;">
@@ -18,13 +18,14 @@
                 <th>পেশা</th>
                 <th>নাম</th>
                 <th>কোম্পানী</th>
-                <th>যোগদানের তারিখ</th>
+                <th>যাওয়ার তারিখ</th>
                 <th>মন্তব্য</th>
+            
     
             </tr>
         </thead>
         <tbody style="color: black;">
-            {% for x in plve_records %}
+            {% for x in aidToCiv_records %}
             <tr>
         
                 <td>{{ x["সেনা নং"] }}</td>
@@ -32,8 +33,9 @@
                 <td>{{ x["পেশা"] }}</td>
                 <td>{{ x["নাম"] }}</td>
                 <td>{{ x["কোম্পানী"] }}</td>
-                <td>{{ x["যোগদানের তারিখ"] }}</td>
+                <td>{{ x["যাওয়ার তারিখ"] }}</td>
                 <td>{{ x["মন্তব্য"] }}</td>
+               
 
                
             </tr>

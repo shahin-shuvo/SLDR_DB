@@ -91,9 +91,18 @@ df = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{aidToCiv_sheet}/expor
 df= df.fillna("-")
 aidToCiv_records = df.to_dict(orient="records")
 
+
+coy_list = [["HQ", hq_records], ["BHQ", bhq_records],
+                ["RADIO COY", radio_records], ["OP COY", op_records],
+                 ["RR & LINE COY", rr_records], ["123 BSC", bsc123_records],
+                  ["127 BSC", bsc127_records], ["128 BSC", bsc128_records],
+                   ["212 ABSC", bsc212_records], ["ICT GP", ict_records], ]
+
 @views.route('/')
 def home():
-    return render_template("home.html",
+    #coy_name = ["HQ", "BHQ", "RADIO", "RR & LINE", "OP COY", "123 BSC", "127 BSC", "128 BSC", "212 BSC"]
+   
+    return render_template("home.html", coy_list = coy_list,
                            posted_count = len(posted_manpower),
                            att_count = len(att_records),
                            aidToCiv_count = len(aidToCiv_records),
@@ -135,3 +144,8 @@ def clve():
 @views.route('/present')
 def presnt():
     return render_template("present.html", present_records= present_records)
+
+@views.route('/coywise/<index>')
+def coywise(index):
+    index = int(index, base=10) -1
+    return render_template("coywise.html", coy_records= coy_list[index][1], coy_name = coy_list[index][0])

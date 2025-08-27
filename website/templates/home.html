@@ -25,7 +25,7 @@
         </div>
 
         <div class="col-xl-2 col-lg-2 col-xs-6 col-sm-6">
-            <div class="card l-bg-cherry" style="background-color: #EEFCBB ">
+            <div class="card l-bg-cherry" style="background-color: #C4F3C7 ">
                 <div class="card-statistic-3 p-4">
                     <div class="mb-2">
                         <h5 class="card-title mb-0">PRESENT</h5>
@@ -121,20 +121,26 @@
     <thead>
         <tr style="background-color: #091E3E; color: whitesmoke;">
 
-            <th>Ser</th>
-            <th>Name</th>
-            <th>Appt</th>
+            <th>Coy</th>
+            <th>Total Posted</th>
+            <th>Details</th>
+           
 
         </tr>
     </thead>
     <tbody style="color: black;">
-        {% for x in memberList %}
+        {% for coy in coy_list %}
+       
+       
         <tr>
-            <td>{{ loop.index }}</td>
-            <td>{{ x["Name"] }}</td>
-            <td>{{ x["Appt"] }}</td>
+            <td>{{ coy[0] }}</td>
+            <td> {{ coy[1] | length }} </td>
+            <td> 
+                <a type="button" href= "coywise/{{loop.index}}" class="btn btn-secondary btn-sm">View Details<i class="bi bi-arrow-right"></i></a>
+            </td>
            
         </tr>
+      
         {% endfor %}
     </tbody>
 </table>

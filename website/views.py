@@ -86,9 +86,6 @@ posted_manpower = bhq_records+ hq_records+ radio_records + rr_records + op_recor
 
 @views.route('/')
 def home():
-    # For committe data
-
-    # print(carousel_img)
     return render_template("home.html",
                            posted_count = len(posted_manpower),
                            att_count = len(att_records),
